@@ -1,4 +1,4 @@
-import CustomTabBar from "@/src/shared/ui/CustomTabBar";
+import CustomTabBar from "@ui/CustomTabBar";
 import { Tabs } from "expo-router";
 
 export default function TabLayout() {
@@ -10,13 +10,25 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          title: "피드",
         }}
       />
       <Tabs.Screen
-        name="settings"
+        name="group"
         options={{
-          title: "Settings",
+          title: "모임",
+        }}
+      />
+      <Tabs.Screen
+        name="search"
+        options={{
+          title: "검색",
+        }}
+      />
+      <Tabs.Screen
+        name="my-page"
+        options={{
+          title: "내 정보",
         }}
       />
     </Tabs>

@@ -1,7 +1,7 @@
-import { colors } from "@/src/theme/token";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
+import { colors } from "@theme/token";
+import { AppText } from "@ui/AppText";
 import { Pressable, StyleSheet, View } from "react-native";
-import { AppText } from "./AppText";
 
 // 주입용 커스텀 탭바
 export default function CustomTabBar({

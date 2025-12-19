@@ -1,6 +1,5 @@
-import { colors, typography } from "@/src/theme/token";
-import React from "react";
 import { StyleSheet, Text, TextProps, TextStyle } from "react-native";
+import { colors, typography } from "@theme/token";
 
 type AppTextProps = TextProps & {
   weight?: keyof typeof typography.fontWeight;

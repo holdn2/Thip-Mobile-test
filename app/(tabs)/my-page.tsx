@@ -1,5 +1,5 @@
-import { AppText } from "@/src/shared/ui/AppText";
-import { colors } from "@/src/theme/token";
+import { colors } from "@theme/token";
+import { AppText } from "@ui/AppText";
 import React from "react";
 import { View } from "react-native";
 
@@ -13,7 +13,7 @@ export default function Settings() {
       }}
     >
       <AppText weight="bold" color={colors.character.orange} size="xl">
-        Settings
+        내 정보
       </AppText>
     </View>
   );
