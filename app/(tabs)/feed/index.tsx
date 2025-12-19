@@ -1,8 +1,8 @@
 import { colors } from "@theme/token";
-import { AppText } from "@ui/AppText";
+import { AppText } from "@ui/app-text";
 import { View } from "react-native";
 
-export default function search() {
+export default function Feed() {
   return (
     <View
       style={{
@@ -11,8 +11,8 @@ export default function search() {
         alignItems: "center",
       }}
     >
-      <AppText weight="extrabold" size="lg" color={colors.neongreen}>
-        검색
+      <AppText weight="extrabold" size="lg" color={colors.purple.sub}>
+        피드
       </AppText>
     </View>
   );

@@ -1,8 +1,10 @@
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { colors } from "@theme/token";
-import { AppText } from "@ui/AppText";
-import { Pressable, StyleSheet, View } from "react-native";
+import { AppText } from "@ui/app-text";
+import { Pressable, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+
+import { styles } from "./custom-tab-bar.styles";
 
 export default function CustomTabBar({
   state,
@@ -10,7 +12,7 @@ export default function CustomTabBar({
   navigation,
 }: BottomTabBarProps) {
   return (
-    <SafeAreaView style={styles.outer}>
+    <SafeAreaView style={styles.outer} edges={["bottom"]}>
       <View style={styles.tabBarContainer}>
         {state.routes.map((route, index) => {
           const focused = state.index === index;
@@ -46,35 +48,3 @@ export default function CustomTabBar({
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  outer: {
-    backgroundColor: colors.black.main,
-  },
-
-  tabBarContainer: {
-    flexDirection: "row",
-    paddingHorizontal: 32,
-    paddingVertical: 16,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: colors.grey[300],
-    borderTopLeftRadius: 12,
-    borderTopRightRadius: 12,
-  },
-
-  tabBarItemContainer: {
-    flex: 1,
-    display: "flex",
-    flexDirection: "column",
-    gap: 5,
-  },
-
-  tabBarItemIcon: {
-    display: "flex",
-    alignSelf: "center",
-  },
-
-  tabBarItemTitle: {
-    textAlign: "center",
-  },
-});

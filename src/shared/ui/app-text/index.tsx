@@ -1,5 +1,5 @@
-import { StyleSheet, Text, TextProps, TextStyle } from "react-native";
 import { colors, typography } from "@theme/token";
+import { Text, TextProps, TextStyle } from "react-native";
 
 type AppTextProps = TextProps & {
   weight?: keyof typeof typography.fontWeight;
@@ -26,7 +26,6 @@ export function AppText({
     <Text
       {...props}
       style={[
-        styles.base,
         {
           fontFamily: FONT_BY_WEIGHT[weight],
           fontWeight: "normal",
@@ -38,9 +37,3 @@ export function AppText({
     />
   );
 }
-
-const styles = StyleSheet.create({
-  base: {
-    fontFamily: typography.fontFamily,
-  },
-});

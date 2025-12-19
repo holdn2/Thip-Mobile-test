@@ -32,8 +32,6 @@ export const colors = {
 } as const;
 
 export const typography = {
-  fontFamily: "PretendardVariable",
-
   fontSize: {
     "2xs": 11,
     xs: 12,

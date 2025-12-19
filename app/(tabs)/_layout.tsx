@@ -1,6 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { colors } from "@theme/token";
-import CustomTabBar from "@ui/CustomTabBar";
+import CustomTabBar from "@ui/custom-tab-bar";
 import { Tabs } from "expo-router";
 
 export default function TabLayout() {
@@ -14,7 +14,7 @@ export default function TabLayout() {
       tabBar={(props) => <CustomTabBar {...props} />}
     >
       <Tabs.Screen
-        name="index"
+        name="feed"
         options={{
           title: "피드",
           tabBarIcon: ({ color }) => (
