@@ -1,8 +1,9 @@
 import { AppText } from "@/src/shared/ui/AppText";
 import { colors } from "@/src/theme/token";
+import React from "react";
 import { View } from "react-native";
 
-export default function Home() {
+export default function Settings() {
   return (
     <View
       style={{
@@ -11,8 +12,8 @@ export default function Home() {
         alignItems: "center",
       }}
     >
-      <AppText weight="extrabold" size="lg" color={colors.purple.dark}>
-        Edit app/index.tsx to edit this screen.
+      <AppText weight="bold" color={colors.character.orange} size="xl">
+        Settings
       </AppText>
     </View>
   );

@@ -1,0 +1,47 @@
+import { colors, typography } from "@/src/theme/token";
+import React from "react";
+import { StyleSheet, Text, TextProps, TextStyle } from "react-native";
+
+type AppTextProps = TextProps & {
+  weight?: keyof typeof typography.fontWeight;
+  size?: keyof typeof typography.fontSize;
+  color?: string;
+};
+
+const FONT_BY_WEIGHT = {
+  regular: "Pretendard_400",
+  medium: "Pretendard_500",
+  semibold: "Pretendard_600",
+  bold: "Pretendard_700",
+  extrabold: "Pretendard_800",
+} as const;
+
+export function AppText({
+  style,
+  weight = "regular",
+  size = "base",
+  color = colors.black.main,
+  ...props
+}: AppTextProps) {
+  return (
+    <Text
+      {...props}
+      style={[
+        styles.base,
+        {
+          fontFamily: FONT_BY_WEIGHT[weight],
+          fontWeight: "normal",
+          fontSize: typography.fontSize[size],
+          color,
+        } as TextStyle,
+        style,
+      ]}
+    />
+  );
+}
+
+const styles = StyleSheet.create({
+  base: {
+    fontFamily: typography.fontFamily,
+  },
+});
