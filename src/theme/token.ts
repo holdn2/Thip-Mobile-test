@@ -32,10 +32,7 @@ export const colors = {
 } as const;
 
 export const typography = {
-  fontFamily: {
-    primary: "PretendardVariable",
-    secondary: "Paperlogy",
-  },
+  fontFamily: "PretendardVariable",
 
   fontSize: {
     "2xs": 11,
