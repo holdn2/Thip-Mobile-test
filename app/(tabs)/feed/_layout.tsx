@@ -1,3 +1,4 @@
+import { FeedHeader } from "@app/(tabs)/feed/_components";
 import { colors } from "@theme/token";
 import { Stack } from "expo-router";
 
@@ -11,7 +12,8 @@ export default function FeedLayout() {
       <Stack.Screen
         name="index"
         options={{
-          headerShown: false,
+          headerShown: true,
+          header: () => <FeedHeader />,
         }}
       />
     </Stack>

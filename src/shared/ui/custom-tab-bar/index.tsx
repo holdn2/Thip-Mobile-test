@@ -6,11 +6,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { styles } from "./custom-tab-bar.styles";
 
-export const CustomTabBar = ({
+export default function CustomTabBar({
   state,
   descriptors,
   navigation,
-}: BottomTabBarProps) => {
+}: BottomTabBarProps) {
   return (
     <SafeAreaView style={styles.outer} edges={["bottom"]}>
       <View style={styles.tabBarContainer}>
@@ -47,4 +47,4 @@ export const CustomTabBar = ({
       </View>
     </SafeAreaView>
   );
-};
+}

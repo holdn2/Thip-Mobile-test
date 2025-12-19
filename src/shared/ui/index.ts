@@ -1,2 +1,3 @@
-export { AppText } from "./app-text";
-export { CustomTabBar } from "./custom-tab-bar";
+export { default as AppText } from "./app-text";
+export { default as CustomHeader } from "./custom-header";
+export { default as CustomTabBar } from "./custom-tab-bar";

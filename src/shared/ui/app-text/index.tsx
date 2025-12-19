@@ -15,13 +15,13 @@ const FONT_BY_WEIGHT = {
   extrabold: "Pretendard_800",
 } as const;
 
-export const AppText = ({
+export default function AppText({
   style,
   weight = "regular",
   size = "base",
   color = colors.black.main,
   ...props
-}: AppTextProps) => {
+}: AppTextProps) {
   return (
     <Text
       {...props}
@@ -36,4 +36,4 @@ export const AppText = ({
       ]}
     />
   );
-};
+}
