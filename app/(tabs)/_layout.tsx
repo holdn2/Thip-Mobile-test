@@ -1,10 +1,14 @@
+import { colors } from "@theme/token";
 import CustomTabBar from "@ui/CustomTabBar";
 import { Tabs } from "expo-router";
 
 export default function TabLayout() {
   return (
     <Tabs
-      screenOptions={{ headerShown: false }}
+      screenOptions={{
+        headerShown: false,
+        sceneStyle: { backgroundColor: colors.black.main },
+      }}
       tabBar={(props) => <CustomTabBar {...props} />}
     >
       <Tabs.Screen

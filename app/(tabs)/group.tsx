@@ -1,3 +1,4 @@
+import { colors } from "@theme/token";
 import { AppText } from "@ui/AppText";
 import React from "react";
 import { View } from "react-native";
@@ -11,7 +12,7 @@ export default function Group() {
         alignItems: "center",
       }}
     >
-      <AppText weight="extrabold" size="lg">
+      <AppText weight="extrabold" size="lg" color={colors.character.lavender}>
         모임
       </AppText>
     </View>

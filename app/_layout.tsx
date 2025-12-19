@@ -1,11 +1,13 @@
+import { colors } from "@theme/token";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { View } from "react-native";
 
 SplashScreen.preventAutoHideAsync();
 
-export default function Layout() {
+export default function RootLayout() {
   const [loaded, error] = useFonts({
     Pretendard_400: require("../assets/fonts/Pretendard-Regular.otf"),
     Pretendard_500: require("../assets/fonts/Pretendard-Medium.otf"),
@@ -24,8 +26,10 @@ export default function Layout() {
     return null;
   }
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-    </Stack>
+    <View style={{ flex: 1, backgroundColor: colors.black.main }}>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      </Stack>
+    </View>
   );
 }
