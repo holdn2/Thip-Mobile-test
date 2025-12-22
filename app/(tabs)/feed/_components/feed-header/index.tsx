@@ -1,8 +1,10 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { AppText, CustomHeader } from "@shared/ui";
-import { colors } from "@theme/token";
 import { router } from "expo-router";
 import { StyleSheet, View } from "react-native";
+
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { IcSearch } from "@images/icons";
+import { AppText, CustomHeader } from "@shared/ui";
+import { colors } from "@theme/token";
 
 export default function FeedHeader() {
   const handleToSearchUser = () => {
@@ -26,12 +28,7 @@ export default function FeedHeader() {
       // TODO : icon 수정
       right={
         <View style={styles.iconWrapper}>
-          <Ionicons
-            name="person-add-outline"
-            size={24}
-            color={colors.white}
-            onPress={handleToSearchUser}
-          />
+          <IcSearch onPress={handleToSearchUser} />
           <Ionicons
             name="alarm-outline"
             size={24}
