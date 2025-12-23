@@ -34,6 +34,7 @@ export default function Feed() {
           weight="extrabold"
           size="lg"
           color={colors.purple.sub}
+          // TODO: 로그인 페이지 테스트를 위한 것이니 추후 제거 필요
           onPress={() => router.push("/login")}
         >
           {isMyFeed ? "내 피드" : "피드"}

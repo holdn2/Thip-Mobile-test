@@ -11,7 +11,7 @@ export default function KakaoLoginButton() {
     router.push("/(tabs)/feed");
   };
   return (
-    <Pressable style={styles.loginButtonConatainer} onPress={handleLogin}>
+    <Pressable style={styles.loginButtonContainer} onPress={handleLogin}>
       <IcKakaotalk />
       <AppText weight="semibold" size="base" color={colors.black.main}>
         카카오계정 로그인
@@ -21,9 +21,8 @@ export default function KakaoLoginButton() {
 }
 
 const styles = StyleSheet.create({
-  loginButtonConatainer: {
+  loginButtonContainer: {
     backgroundColor: colors.kakaoyellow,
-    display: "flex",
     flexDirection: "row",
     gap: 8,
     justifyContent: "center",

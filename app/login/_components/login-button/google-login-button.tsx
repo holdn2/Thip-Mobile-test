@@ -11,7 +11,7 @@ export default function GoogleLoginButton() {
     router.push("/(tabs)/feed");
   };
   return (
-    <Pressable style={styles.loginButtonConatainer} onPress={handleLogin}>
+    <Pressable style={styles.loginButtonContainer} onPress={handleLogin}>
       <IcGoogle />
       <AppText weight="semibold" size="base" color={colors.black.main}>
         구글계정 로그인
@@ -21,9 +21,8 @@ export default function GoogleLoginButton() {
 }
 
 const styles = StyleSheet.create({
-  loginButtonConatainer: {
+  loginButtonContainer: {
     backgroundColor: colors.white,
-    display: "flex",
     flexDirection: "row",
     gap: 8,
     justifyContent: "center",
