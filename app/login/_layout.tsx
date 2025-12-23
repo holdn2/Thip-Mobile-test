@@ -2,9 +2,7 @@ import { Stack } from "expo-router";
 
 import { colors } from "@theme/token";
 
-import { SearchUserHeader } from "./_components";
-
-export default function SearchUserLayout() {
+export default function LoginLayout() {
   return (
     <Stack
       screenOptions={{
@@ -14,7 +12,7 @@ export default function SearchUserLayout() {
       <Stack.Screen
         name="index"
         options={{
-          header: () => <SearchUserHeader />,
+          headerShown: false,
         }}
       />
     </Stack>
