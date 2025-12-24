@@ -1,8 +1,7 @@
 import { Stack } from "expo-router";
 
+import { FeedHeader } from "@screens/feed";
 import { colors } from "@theme/token";
-
-import { FeedHeader } from "./_components";
 
 export default function FeedLayout() {
   return (
