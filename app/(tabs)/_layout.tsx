@@ -1,3 +1,5 @@
+import { Tabs } from "expo-router";
+
 import {
   IcBooksearch,
   IcBooksearchFilled,
@@ -10,7 +12,6 @@ import {
 } from "@images/icons";
 import { CustomTabBar } from "@shared/ui";
 import { colors } from "@theme/token";
-import { Tabs } from "expo-router";
 
 export default function TabLayout() {
   // TODO: 탭바 아이콘 수정

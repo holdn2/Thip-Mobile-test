@@ -1,8 +1,9 @@
-import { useLoadFonts } from "@shared/hooks/use-load-fonts";
-import { colors } from "@theme/token";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { SafeAreaView } from "react-native-safe-area-context";
+
+import { useLoadFonts } from "@shared/hooks/use-load-fonts";
+import { colors } from "@theme/token";
 
 SplashScreen.preventAutoHideAsync();
 

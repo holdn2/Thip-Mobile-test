@@ -16,6 +16,7 @@ module.exports = function (api) {
             "@shared": "./src/shared",
             "@theme": "./src/theme",
             "@images/*": "./assets/images",
+            "@screens/*": "./screens",
           },
           extensions: [".tsx", ".ts", ".js", ".jsx", ".json", ".svg"],
         },

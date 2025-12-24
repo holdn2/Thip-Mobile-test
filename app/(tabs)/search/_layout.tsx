@@ -1,7 +1,7 @@
-import { colors } from "@/src/theme/token";
 import { Stack } from "expo-router";
 
-import { SearchHeader } from "./_components";
+import { SearchHeader } from "@screens/search";
+import { colors } from "@theme/token";
 
 export default function SearchLayout() {
   return (

@@ -9,7 +9,8 @@
       "@assets/*": ["./assets/*"],
       "@shared/*": ["./src/shared/*"],
       "@theme/*": ["./src/theme/*"],
-      "@images/*": ["./assets/images/*"]
+      "@images/*": ["./assets/images/*"],
+      "@screens/*": ["./screens/*"]
     }
   },
   "include": [

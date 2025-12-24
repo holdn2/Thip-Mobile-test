@@ -1,8 +1,7 @@
 import { Stack } from "expo-router";
 
+import { AlarmHeader } from "@screens/alarm";
 import { colors } from "@theme/token";
-
-import { AlarmHeader } from "./_components";
 
 export default function AlarmLayout() {
   return (
