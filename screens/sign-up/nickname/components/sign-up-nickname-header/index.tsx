@@ -2,7 +2,15 @@ import { SignUpHeader } from "@screens/sign-up/components";
 import { AppText } from "@shared/ui";
 import { colors } from "@theme/token";
 
-export default function SignUpNicknameHeader() {
+interface SignUpNicknameHeaderProps {
+  disabled: boolean;
+  handleClickButton: () => void;
+}
+
+export default function SignUpNicknameHeader({
+  disabled,
+  handleClickButton,
+}: SignUpNicknameHeaderProps) {
   return (
     <SignUpHeader
       center={
@@ -10,8 +18,8 @@ export default function SignUpNicknameHeader() {
           설정 1/2
         </AppText>
       }
-      disabled={true}
-      handleClickButton={() => {}}
+      disabled={disabled}
+      handleClickButton={handleClickButton}
     />
   );
 }

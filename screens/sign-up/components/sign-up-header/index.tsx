@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { CustomHeader } from "@shared/ui";
+import { ButtonHeader, CustomHeader } from "@shared/ui";
 
 interface SignUpHeaderProps {
   center?: ReactNode;
@@ -13,5 +13,14 @@ export default function SignUpHeader({
   disabled,
   handleClickButton,
 }: SignUpHeaderProps) {
-  return <CustomHeader center={center} />;
+  return (
+    <CustomHeader
+      center={center}
+      right={
+        <ButtonHeader disabled={disabled} handleClickButton={handleClickButton}>
+          다음
+        </ButtonHeader>
+      }
+    />
+  );
 }
