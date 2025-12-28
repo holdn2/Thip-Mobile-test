@@ -17,7 +17,7 @@ export const useSignUpProfile = () => {
   // TODO: 서버에 회원가입 요청
   const handleToOnboarding = () => {
     alert(`닉네임: ${nickname} / 장르: ${genre}`);
-    router.push("/sign-up/onboarding");
+    router.replace("/sign-up/onboarding");
   };
 
   return {
