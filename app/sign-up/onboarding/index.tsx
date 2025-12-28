@@ -1,15 +1,3 @@
-import { StyleSheet, Text, View } from "react-native";
+import { OnboardingScreen } from "@screens/sign-up/onboarding";
 
-export default function Onboarding() {
-  return (
-    <View style={styles.pageContainer}>
-      <Text>온보딩</Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  pageContainer: {
-    flex: 1,
-  },
-});
+export default OnboardingScreen;
