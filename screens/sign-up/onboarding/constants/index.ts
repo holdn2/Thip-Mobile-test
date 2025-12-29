@@ -34,14 +34,14 @@ export const ONBOARDING: OnboardingItem[] = [
     step: 3,
     title: "모임",
     description:
-      "모임방에서는 글은 물론 투표 기능을 통해\n감상과 의견을 나눌 수 있어요.!",
+      "모임방에서는 글은 물론 투표 기능을 통해\n감상과 의견을 나눌 수 있어요.",
     image: OnboardingStep3,
   },
   {
     step: 4,
     title: "모임",
     description:
-      "읽고 싶은 책으로 나만의 독서 모임을 만들고,\n독서메이트와 함께 기록을 나눌 수 있어요. ",
+      "읽고 싶은 책으로 나만의 독서 모임을 만들고,\n독서메이트와 함께 기록을 나눌 수 있어요.",
     image: OnboardingStep4,
   },
   {

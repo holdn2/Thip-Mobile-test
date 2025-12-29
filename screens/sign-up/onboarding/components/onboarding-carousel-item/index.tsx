@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
   description: {
     textAlign: "center",
-    height: 48,
+    minHeight: 48,
   },
   image: {
     width: 220,

@@ -24,7 +24,7 @@ export default function CustomButton({
         size === "fill" && {
           paddingVertical: 13,
           width: "100%",
-          borderRadius: "none",
+          borderRadius: 0,
         },
       ]}
       onPress={handlePress}

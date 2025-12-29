@@ -1,6 +1,7 @@
 import { router } from "expo-router";
 import { useRef, useState } from "react";
 import {
+  Pressable,
   ScrollView,
   StyleSheet,
   useWindowDimensions,
@@ -28,10 +29,12 @@ export default function OnboardingScreen() {
 
   const handlePressNext = () => {
     if (isLastItem) router.push("/sign-up/welcome");
-    ref.current?.scrollTo({
-      count: 1,
-      animated: true,
-    });
+    else {
+      ref.current?.scrollTo({
+        count: 1,
+        animated: true,
+      });
+    }
   };
 
   const handlePressDot = (index: number) => {
@@ -57,6 +60,7 @@ export default function OnboardingScreen() {
           </ButtonHeader>
         }
       />
+      {/* TODO: 캐러셀 관련 스타일링 디테일 수정 */}
       <ScrollView contentContainerStyle={styles.container}>
         <Carousel
           width={width - 40}
@@ -76,15 +80,16 @@ export default function OnboardingScreen() {
           containerStyle={styles.paginationContainer}
           onPress={handlePressDot}
         />
-        <AppText
-          weight="regular"
-          size="xs"
-          color={colors.grey[200]}
-          onPress={handlePressSkip}
-          style={styles.skipText}
-        >
-          건너뛰기
-        </AppText>
+        <Pressable onPress={handlePressSkip}>
+          <AppText
+            weight="regular"
+            size="xs"
+            color={colors.grey[200]}
+            style={styles.skipText}
+          >
+            건너뛰기
+          </AppText>
+        </Pressable>
       </ScrollView>
     </View>
   );
