@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, View } from "react-native";
 
-import { AppText } from "@shared/ui";
-import { colors } from "@theme/token";
+import SearchBar from "@/src/shared/ui/search-bar";
+import { useState } from "react";
 import { MostSearched, RecentSearch } from "./components";
 
 const DUMMY_RECENT_DATA = [
@@ -28,10 +28,19 @@ const DUMMY_MOST_DATA = [
 ];
 
 export default function SearchScreen() {
+  const [searchText, setSearchText] = useState("");
+  const handleSearch = () => {
+    console.log(searchText, " 검색");
+  };
   return (
     <View style={styles.page}>
       <View style={styles.searchBar}>
-        <AppText color={colors.white}>검색바 위치</AppText>
+        <SearchBar
+          value={searchText}
+          placeholder="책 제목, 작가명을 검색해보세요."
+          setValue={setSearchText}
+          handleSearch={handleSearch}
+        />
       </View>
       <ScrollView contentContainerStyle={styles.content}>
         <RecentSearch recentSearchedKeywords={DUMMY_RECENT_DATA} />
