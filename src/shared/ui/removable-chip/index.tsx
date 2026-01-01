@@ -30,7 +30,12 @@ export default function RemovableChip({
       >
         {text}
       </AppText>
-      <Pressable onPress={handleRemove}>
+      <Pressable
+        onPress={(e) => {
+          e.stopPropagation();
+          handleRemove();
+        }}
+      >
         <IcX width={iconSize} height={iconSize} />
       </Pressable>
     </Pressable>
