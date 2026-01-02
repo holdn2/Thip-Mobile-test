@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import React from "react";
+import { useCallback } from "react";
 import { StyleSheet, View } from "react-native";
 
 import { IcArrowLeft } from "@images/icons";
@@ -15,9 +15,9 @@ const profileColor = colors.character.orange;
 export default function WelcomeScreen() {
   const GenreImage = GENRES.find((item) => item.subTitle === genre)?.image;
 
-  const handleGoBack = () => {
+  const handleGoBack = useCallback(() => {
     router.back();
-  };
+  }, []);
 
   const handlePressStart = () => {
     router.replace("/feed");

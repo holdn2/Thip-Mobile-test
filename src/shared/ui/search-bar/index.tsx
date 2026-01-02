@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { Pressable, StyleSheet, TextInput, View } from "react-native";
 
 import { IcSearch, IcXCircle } from "@images/icons";
@@ -16,9 +17,9 @@ export default function SearchBar({
   setValue,
   handleSearch,
 }: SearchBarProps) {
-  const handleDelete = () => {
+  const handleDelete = useCallback(() => {
     setValue("");
-  };
+  }, [setValue]);
   return (
     <View style={styles.container}>
       <TextInput

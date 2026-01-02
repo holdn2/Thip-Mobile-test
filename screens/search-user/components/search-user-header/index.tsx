@@ -1,12 +1,14 @@
+import { router } from "expo-router";
+import { useCallback } from "react";
+
 import { IcArrowLeft } from "@images/icons";
 import { AppText, CustomHeader } from "@shared/ui";
 import { colors } from "@theme/token";
-import { router } from "expo-router";
 
 export default function SearchUserHeader() {
-  const handleGoBack = () => {
+  const handleGoBack = useCallback(() => {
     router.back();
-  };
+  }, []);
 
   return (
     <CustomHeader

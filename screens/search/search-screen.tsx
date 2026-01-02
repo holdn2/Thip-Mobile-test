@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 
 import { SearchBar } from "@shared/ui";
@@ -10,14 +10,14 @@ export default function SearchScreen() {
   const [searchText, setSearchText] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
 
-  const handleChangeText = (text: string) => {
+  const handleChangeText = useCallback((text: string) => {
     setSearchText(text);
     setHasSearched(false);
-  };
-  const handleSearch = () => {
+  }, []);
+  const handleSearch = useCallback(() => {
     console.log(searchText, " 검색");
     setHasSearched(true);
-  };
+  }, [searchText]);
 
   return (
     <View style={styles.page}>

@@ -1,5 +1,6 @@
 import { StyleSheet, View } from "react-native";
 
+import { THIP_EMAIL } from "@shared/constants";
 import { AppText } from "@shared/ui";
 import { colors } from "@theme/token";
 
@@ -7,7 +8,7 @@ export default function BookRequestScreen() {
   return (
     <View style={styles.container}>
       <AppText weight="semibold" size="lg" color={colors.white}>
-        texthip2025@gmail.com
+        {THIP_EMAIL}
       </AppText>
       <AppText
         weight="regular"

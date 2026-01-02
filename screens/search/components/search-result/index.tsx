@@ -1,4 +1,5 @@
 import { router } from "expo-router";
+import { useCallback } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 
 import { AppText, CustomButton } from "@shared/ui";
@@ -18,10 +19,35 @@ export default function SearchResult({
 }: SearchResultProps) {
   // TODO: searchText로 추후 서버 api 연동하여 검색된 책 리스트 조회
 
-  const handleToBookRequestPage = () => {
-    console.log(searchText, " 신청하러 가기");
+  const handleToBookRequestPage = useCallback(() => {
     router.push("/book-request");
-  };
+  }, []);
+
+  // TODO: 추후 타입 만들어서 수정
+  const listItem = useCallback(
+    ({
+      item,
+    }: {
+      item: {
+        title: string;
+        imageUrl: string;
+        authorName: string;
+        publisher: string;
+        isbn: string;
+      };
+    }) => (
+      <SearchedBookItem
+        title={item.title}
+        imageUrl={item.imageUrl}
+        authorName={item.authorName}
+        publisher={item.publisher}
+        isbn={item.isbn}
+      />
+    ),
+    []
+  );
+
+  const Separator = () => <View style={styles.separator} />;
 
   return (
     <View style={styles.container}>
@@ -53,16 +79,8 @@ export default function SearchResult({
           contentContainerStyle={styles.booksWrapper}
           data={DUMMY_SEARCHED_BOOKS}
           keyExtractor={(item) => item.isbn}
-          renderItem={({ item }) => (
-            <SearchedBookItem
-              title={item.title}
-              imageUrl={item.imageUrl}
-              authorName={item.authorName}
-              publisher={item.publisher}
-              isbn={item.isbn}
-            />
-          )}
-          ItemSeparatorComponent={() => <View style={styles.seperator} />}
+          renderItem={listItem}
+          ItemSeparatorComponent={Separator}
         />
       )}
     </View>
@@ -84,7 +102,7 @@ const styles = StyleSheet.create({
     gap: 12,
     paddingBottom: 20,
   },
-  seperator: {
+  separator: {
     height: 1,
     backgroundColor: colors.darkgrey.dark,
     marginTop: 12,
