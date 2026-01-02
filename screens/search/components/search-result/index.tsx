@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { FlatList, StyleSheet, View } from "react-native";
 
 import { AppText, CustomButton } from "@shared/ui";
@@ -19,6 +20,7 @@ export default function SearchResult({
 
   const handleToBookRequestPage = () => {
     console.log(searchText, " 신청하러 가기");
+    router.push("/book-request");
   };
 
   return (
