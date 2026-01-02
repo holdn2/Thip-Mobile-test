@@ -1,42 +1,42 @@
+import { useCallback, useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 
-import { AppText } from "@shared/ui";
-import { colors } from "@theme/token";
-import { MostSearched, RecentSearch } from "./components";
+import { SearchBar } from "@shared/ui";
 
-const DUMMY_RECENT_DATA = [
-  "테스트1",
-  "검색어",
-  "예시입니다",
-  "어쩌구",
-  "ㅁㄴㅇㄹ",
-];
-const DUMMY_MOST_DATA = [
-  { ranking: 1, photo: "https://placehold.co/60/png", title: "예시입니다" },
-  { ranking: 2, photo: "https://placehold.co/60/png", title: "테스트" },
-  { ranking: 3, photo: "https://placehold.co/60/png", title: "배고프다" },
-  {
-    ranking: 4,
-    photo: "https://placehold.co/60/png",
-    title: "테스트입니당",
-  },
-  {
-    ranking: 5,
-    photo: "https://placehold.co/60/png",
-    title: "26년도 화이팅!",
-  },
-];
+import { MostSearched, RecentSearch, SearchResult } from "./components";
+import { DUMMY_MOST_DATA, DUMMY_RECENT_DATA } from "./constants";
 
 export default function SearchScreen() {
+  const [searchText, setSearchText] = useState("");
+  const [hasSearched, setHasSearched] = useState(false);
+
+  const handleChangeText = useCallback((text: string) => {
+    setSearchText(text);
+    setHasSearched(false);
+  }, []);
+  const handleSearch = useCallback(() => {
+    console.log(searchText, " 검색");
+    setHasSearched(true);
+  }, [searchText]);
+
   return (
     <View style={styles.page}>
       <View style={styles.searchBar}>
-        <AppText color={colors.white}>검색바 위치</AppText>
+        <SearchBar
+          value={searchText}
+          placeholder="책 제목, 작가명을 검색해보세요."
+          setValue={handleChangeText}
+          handleSearch={handleSearch}
+        />
       </View>
-      <ScrollView contentContainerStyle={styles.content}>
-        <RecentSearch recentSearchedKeywords={DUMMY_RECENT_DATA} />
-        <MostSearched mostSearchedBooks={DUMMY_MOST_DATA} />
-      </ScrollView>
+      {!!searchText.trim() ? (
+        <SearchResult searchText={searchText} hasSearched={hasSearched} />
+      ) : (
+        <ScrollView contentContainerStyle={styles.content}>
+          <RecentSearch recentSearchedKeywords={DUMMY_RECENT_DATA} />
+          <MostSearched mostSearchedBooks={DUMMY_MOST_DATA} />
+        </ScrollView>
+      )}
     </View>
   );
 }
