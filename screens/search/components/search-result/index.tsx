@@ -4,8 +4,8 @@ import { FlatList, StyleSheet, View } from "react-native";
 import { AppText, CustomButton } from "@shared/ui";
 import { colors } from "@theme/token";
 
+import { SearchedBookItem } from "../../components";
 import { DUMMY_SEARCHED_BOOKS } from "../../constants";
-import SearchedBookItem from "../searched-book-item";
 
 interface SearchResultProps {
   searchText: string;
