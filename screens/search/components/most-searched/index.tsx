@@ -1,8 +1,9 @@
+import { useMemo } from "react";
 import { StyleSheet, View } from "react-native";
 
 import { AppText } from "@shared/ui";
 import { colors } from "@theme/token";
-import { useMemo } from "react";
+
 import MostSearchedBookItem from "../most-searched-book-item";
 
 interface MostSearchedBook {

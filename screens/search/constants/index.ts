@@ -1,0 +1,123 @@
+export const DUMMY_RECENT_DATA = [
+  "테스트1",
+  "검색어",
+  "예시입니다",
+  "어쩌구",
+  "ㅁㄴㅇㄹ",
+];
+export const DUMMY_MOST_DATA = [
+  { ranking: 1, photo: "https://placehold.co/60/png", title: "예시입니다" },
+  { ranking: 2, photo: "https://placehold.co/60/png", title: "테스트" },
+  { ranking: 3, photo: "https://placehold.co/60/png", title: "배고프다" },
+  {
+    ranking: 4,
+    photo: "https://placehold.co/60/png",
+    title: "테스트입니당",
+  },
+  {
+    ranking: 5,
+    photo: "https://placehold.co/60/png",
+    title: "26년도 화이팅!",
+  },
+];
+
+export const DUMMY_SEARCHED_BOOKS = [
+  {
+    title: "채식주의자",
+    imageUrl: "https://placehold.co/80x107/png",
+    authorName: "한강",
+    publisher: "창비",
+    isbn: "9788936434595",
+  },
+  {
+    title: "아몬드",
+    imageUrl: "https://placehold.co/80x107/png",
+    authorName: "손원평",
+    publisher: "창비",
+    isbn: "9788936434267",
+  },
+  {
+    title: "불편한 편의점",
+    imageUrl: "https://placehold.co/80x107/png",
+    authorName: "김호연",
+    publisher: "나무옆의자",
+    isbn: "9791161571188",
+  },
+  {
+    title: "데미안",
+    imageUrl: "https://placehold.co/80x107/png",
+    authorName: "헤르만 헤세",
+    publisher: "민음사",
+    isbn: "9788937460449",
+  },
+  {
+    title: "어린 왕자",
+    imageUrl: "https://placehold.co/80x107/png",
+    authorName: "앙투안 드 생텍쥐페리",
+    publisher: "문학동네",
+    isbn: "9788954677158",
+  },
+  {
+    title: "사피엔스",
+    imageUrl: "https://placehold.co/80x107/png",
+    authorName: "유발 하라리",
+    publisher: "김영사",
+    isbn: "9788934972464",
+  },
+  {
+    title: "클린 코드",
+    imageUrl: "https://placehold.co/80x107/png",
+    authorName: "로버트 C. 마틴",
+    publisher: "인사이트",
+    isbn: "9788966260959",
+  },
+  {
+    title: "리팩터링",
+    imageUrl: "https://placehold.co/80x107/png",
+    authorName: "마틴 파울러",
+    publisher: "한빛미디어",
+    isbn: "9791162242742",
+  },
+  {
+    title: "객체지향의 사실과 오해",
+    imageUrl: "https://placehold.co/80x107/png",
+    authorName: "조영호",
+    publisher: "위키북스",
+    isbn: "9791158391409",
+  },
+  {
+    title: "이펙티브 자바",
+    imageUrl: "https://placehold.co/80x107/png",
+    authorName: "조슈아 블로크",
+    publisher: "인사이트",
+    isbn: "9788966262281",
+  },
+  {
+    title: "코스모스",
+    imageUrl: "https://placehold.co/80x107/png",
+    authorName: "칼 세이건",
+    publisher: "사이언스북스",
+    isbn: "9788983711892",
+  },
+  {
+    title: "총, 균, 쇠",
+    imageUrl: "https://placehold.co/80x107/png",
+    authorName: "재레드 다이아몬드",
+    publisher: "문학사상",
+    isbn: "9788970127248",
+  },
+  {
+    title: "1984",
+    imageUrl: "https://placehold.co/80x107/png",
+    authorName: "조지 오웰",
+    publisher: "민음사",
+    isbn: "9788937460050",
+  },
+  {
+    title: "노르웨이의 숲",
+    imageUrl: "https://placehold.co/80x107/png",
+    authorName: "무라카미 하루키",
+    publisher: "민음사",
+    isbn: "9788937461422",
+  },
+];

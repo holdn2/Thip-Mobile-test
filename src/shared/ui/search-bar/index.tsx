@@ -33,7 +33,7 @@ export default function SearchBar({
         onSubmitEditing={handleSearch}
       />
       <View style={styles.buttonWrapper}>
-        {value && (
+        {!!value.trim() && (
           <Pressable onPress={handleDelete}>
             <IcXCircle />
           </Pressable>
