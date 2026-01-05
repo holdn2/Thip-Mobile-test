@@ -14,10 +14,7 @@ export default function MyPageScreen() {
         <AppText weight="semibold" size="lg" color={colors.white}>
           내 활동
         </AppText>
-        <SettingsListItem
-          label={SETTINGS_MY_ACTIVITY.label}
-          Icon={SETTINGS_MY_ACTIVITY.icon}
-        />
+        <SettingsListItem item={SETTINGS_MY_ACTIVITY} />
       </View>
       <View style={styles.section}>
         <AppText weight="semibold" size="lg" color={colors.white}>
@@ -25,11 +22,7 @@ export default function MyPageScreen() {
         </AppText>
         <View style={styles.list}>
           {SETTINGS_OTHER.map((item) => (
-            <SettingsListItem
-              key={item.label}
-              label={item.label}
-              Icon={item.icon}
-            />
+            <SettingsListItem key={item.id} item={item} />
           ))}
         </View>
       </View>

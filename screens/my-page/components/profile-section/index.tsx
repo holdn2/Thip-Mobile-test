@@ -12,6 +12,11 @@ const profileColor = colors.character.mint;
 export default function ProfileSection() {
   const GenreImage = GENRES.find((item) => item.subTitle === genre)?.image;
 
+  // TODO: 프로필 편집 페이지로 이동
+  const handleToEditProfile = () => {
+    console.log("프로필 편집 페이지로 이동");
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.profileWrapper}>
@@ -27,7 +32,7 @@ export default function ProfileSection() {
           </AppText>
         </View>
       </View>
-      <Pressable style={styles.editButton}>
+      <Pressable style={styles.editButton} onPress={handleToEditProfile}>
         <AppText weight="medium" size="sm" color={colors.grey[200]}>
           편집
         </AppText>
