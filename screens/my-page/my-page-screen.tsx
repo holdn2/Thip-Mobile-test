@@ -1,25 +1,15 @@
-import {
-  FlatList,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  View,
-} from "react-native";
+import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 
 import { AppText } from "@shared/ui";
 import { colors } from "@theme/token";
 
-import { SettingsListItem } from "./components";
+import { ProfileSection, SettingsListItem } from "./components";
 import { SETTINGS_MY_ACTIVITY, SETTINGS_OTHER } from "./constants";
 
 export default function MyPageScreen() {
   return (
     <ScrollView contentContainerStyle={styles.page}>
-      <View>
-        <AppText weight="semibold" size="lg" color={colors.white}>
-          내 프로필 영역
-        </AppText>
-      </View>
+      <ProfileSection />
       <View style={styles.section}>
         <AppText weight="semibold" size="lg" color={colors.white}>
           내 활동
@@ -33,13 +23,15 @@ export default function MyPageScreen() {
         <AppText weight="semibold" size="lg" color={colors.white}>
           기타
         </AppText>
-        <FlatList
-          contentContainerStyle={styles.list}
-          data={SETTINGS_OTHER}
-          renderItem={({ item }) => (
-            <SettingsListItem label={item.label} Icon={item.icon} />
-          )}
-        />
+        <View style={styles.list}>
+          {SETTINGS_OTHER.map((item) => (
+            <SettingsListItem
+              key={item.label}
+              label={item.label}
+              Icon={item.icon}
+            />
+          ))}
+        </View>
       </View>
       <View style={styles.account}>
         <Pressable>
@@ -59,7 +51,6 @@ export default function MyPageScreen() {
 
 const styles = StyleSheet.create({
   page: {
-    flex: 1,
     paddingTop: 20,
     paddingHorizontal: 20,
     gap: 40,
@@ -75,7 +66,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 24,
     // TODO: 너무 밑에 있다고 느껴지면 줄이기
-    paddingTop: 144,
+    // paddingTop: 144,
+    paddingTop: 100,
     paddingBottom: 20,
   },
 });
