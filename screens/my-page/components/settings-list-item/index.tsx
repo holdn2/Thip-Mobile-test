@@ -1,6 +1,8 @@
+import * as WebBrowser from "expo-web-browser";
 import { Pressable, StyleSheet, View } from "react-native";
 
 import { IcRightRight } from "@images/icons";
+import { CUSTOMER_CENTER_URL } from "@shared/constants";
 import { AppText } from "@shared/ui";
 import { colors } from "@theme/token";
 
@@ -16,7 +18,7 @@ interface SettingsListItemProps {
 
 export default function SettingsListItem({ item }: SettingsListItemProps) {
   // TODO: 각 아이템에 대한 action 연결
-  const handlePress = () => {
+  const handlePress = async () => {
     switch (item.id) {
       case SETTINGS_MY_ACTIVITY.id:
         console.log("저장 페이지로 이동");
@@ -25,7 +27,12 @@ export default function SettingsListItem({ item }: SettingsListItemProps) {
         console.log("알림설정 페이지로 이동");
         break;
       case SETTINGS_OTHER[1].id:
-        console.log("고객센터 페이지로 이동");
+        try {
+          await WebBrowser.openBrowserAsync(CUSTOMER_CENTER_URL);
+        } catch (e) {
+          // TODO: 추후 토스트 메시지로 알려주기
+          alert(`링크 열기 실패: ${e}`);
+        }
         break;
       case SETTINGS_OTHER[2].id:
         console.log("공지사항 페이지로 이동");
