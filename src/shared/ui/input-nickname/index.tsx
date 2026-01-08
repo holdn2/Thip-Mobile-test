@@ -12,7 +12,7 @@ import {
 interface InputNicknameProps {
   value: string;
   isError: boolean;
-  errorMessage?: string;
+  errorMessage: string;
   setValue: (value: string) => void;
 }
 
@@ -30,27 +30,25 @@ export default function InputNickname({
   };
 
   return (
-    <>
-      <View
-        style={[
-          styles.inputContainer,
-          isError && { borderWidth: 1, borderColor: colors.red },
-        ]}
-      >
-        <TextInput
-          style={styles.input}
-          value={value}
-          onChangeText={handleChangeText}
-          placeholder={NICKNAME_PLACEHOLDER}
-          placeholderTextColor={colors.grey[300]}
-          selectionColor={colors.neongreen}
-          cursorColor={colors.neongreen}
-          maxLength={NICKNAME_MAX_LENGTH}
-        />
-        <AppText weight="regular" size="xs" color={colors.grey[100]}>
-          {value.length}/{NICKNAME_MAX_LENGTH}
-        </AppText>
-      </View>
+    <View
+      style={[
+        styles.inputContainer,
+        isError && { borderWidth: 1, borderColor: colors.red },
+      ]}
+    >
+      <TextInput
+        style={styles.input}
+        value={value}
+        onChangeText={handleChangeText}
+        placeholder={NICKNAME_PLACEHOLDER}
+        placeholderTextColor={colors.grey[300]}
+        selectionColor={colors.neongreen}
+        cursorColor={colors.neongreen}
+        maxLength={NICKNAME_MAX_LENGTH}
+      />
+      <AppText weight="regular" size="xs" color={colors.grey[100]}>
+        {value.length}/{NICKNAME_MAX_LENGTH}
+      </AppText>
       {isError && (
         <AppText
           weight="regular"
@@ -61,12 +59,13 @@ export default function InputNickname({
           {errorMessage}
         </AppText>
       )}
-    </>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   inputContainer: {
+    position: "relative",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -84,7 +83,8 @@ const styles = StyleSheet.create({
   },
 
   error: {
-    paddingTop: 7,
-    paddingHorizontal: 4,
+    position: "absolute",
+    left: 4,
+    bottom: -22,
   },
 });
