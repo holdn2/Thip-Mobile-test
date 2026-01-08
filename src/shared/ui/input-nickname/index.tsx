@@ -1,21 +1,26 @@
 import { StyleSheet, TextInput, View } from "react-native";
 
-import {
-  INVALID_NICKNAME_CHARS_REGEX,
-  NICKNAME_MAX_LENGTH,
-} from "@shared/constants";
 import { AppText } from "@shared/ui";
 import { colors, typography } from "@theme/token";
 
+import {
+  INVALID_NICKNAME_CHARS_REGEX,
+  NICKNAME_MAX_LENGTH,
+  NICKNAME_PLACEHOLDER,
+} from "./constants";
+
 interface InputNicknameProps {
   value: string;
-  isNicknameDuplicated: boolean;
+  isError: boolean;
+  errorMessage?: string;
   setValue: (value: string) => void;
 }
 
+// TODO: 위치 shared로 옮기기
 export default function InputNickname({
   value,
-  isNicknameDuplicated,
+  isError,
+  errorMessage,
   setValue,
 }: InputNicknameProps) {
   const handleChangeText = (text: string) => {
@@ -26,15 +31,17 @@ export default function InputNickname({
 
   return (
     <>
-      <View style={styles.inputContainer}>
+      <View
+        style={[
+          styles.inputContainer,
+          isError && { borderWidth: 1, borderColor: colors.red },
+        ]}
+      >
         <TextInput
-          style={[
-            styles.input,
-            isNicknameDuplicated && { borderWidth: 1, borderColor: colors.red },
-          ]}
+          style={styles.input}
           value={value}
           onChangeText={handleChangeText}
-          placeholder="한글/영문소문자/숫자로 구성"
+          placeholder={NICKNAME_PLACEHOLDER}
           placeholderTextColor={colors.grey[300]}
           selectionColor={colors.neongreen}
           cursorColor={colors.neongreen}
@@ -44,14 +51,14 @@ export default function InputNickname({
           {value.length}/{NICKNAME_MAX_LENGTH}
         </AppText>
       </View>
-      {isNicknameDuplicated && (
+      {isError && (
         <AppText
           weight="regular"
           size="xs"
           color={colors.red}
           style={styles.error}
         >
-          이미 사용중인 닉네임입니다.
+          {errorMessage}
         </AppText>
       )}
     </>

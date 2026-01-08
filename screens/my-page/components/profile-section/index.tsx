@@ -1,7 +1,8 @@
+import { router } from "expo-router";
 import { Pressable, StyleSheet, View } from "react-native";
 
-import { AppText } from "@/src/shared/ui";
-import { GENRES } from "@screens/sign-up/genre/constants";
+import { AppText } from "@shared/ui";
+import { GENRES } from "@shared/ui/genre-card-group/constants";
 import { colors } from "@theme/token";
 
 // TODO: 프로필 정보 서버에서 받아오기
@@ -12,9 +13,8 @@ const profileColor = colors.character.mint;
 export default function ProfileSection() {
   const GenreImage = GENRES.find((item) => item.subTitle === genre)?.image;
 
-  // TODO: 프로필 편집 페이지로 이동
   const handleToEditProfile = () => {
-    console.log("프로필 편집 페이지로 이동");
+    router.push("/edit-profile");
   };
 
   return (
