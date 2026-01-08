@@ -8,15 +8,15 @@ interface GenreCardGroupProps {
   setSelectedGenre: (v: string | null) => void;
 }
 
+const GAP = 16;
+const H_PADDING = 20;
+const MIN_WIDTH = 130;
+const MAX_WIDTH = 180;
+
 export default function GenreCardGroup({
   selectedGenre,
   setSelectedGenre,
 }: GenreCardGroupProps) {
-  const GAP = 16;
-  const H_PADDING = 20;
-  const MIN_WIDTH = 130;
-  const MAX_WIDTH = 180;
-
   const { width: screenWidth } = useWindowDimensions();
 
   // 양쪽 패딩 제외한 공간

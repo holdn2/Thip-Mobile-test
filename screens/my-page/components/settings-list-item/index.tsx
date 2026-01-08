@@ -7,11 +7,7 @@ import { CUSTOMER_CENTER_URL } from "@shared/constants";
 import { AppText } from "@shared/ui";
 import { colors } from "@theme/token";
 
-import {
-  SETTINGS_MY_ACTIVITY,
-  SETTINGS_OTHER,
-  type SettingsItem,
-} from "../../constants";
+import { SETTINGS_ID, type SettingsItem } from "../../constants";
 
 interface SettingsListItemProps {
   item: SettingsItem;
@@ -21,13 +17,13 @@ export default function SettingsListItem({ item }: SettingsListItemProps) {
   // TODO: 각 아이템에 대한 action 연결
   const handlePress = async () => {
     switch (item.id) {
-      case SETTINGS_MY_ACTIVITY.id:
+      case SETTINGS_ID.save:
         console.log("저장 페이지로 이동");
         break;
-      case SETTINGS_OTHER[0].id:
+      case SETTINGS_ID.alarm:
         router.push("/alarm-settings");
         break;
-      case SETTINGS_OTHER[1].id:
+      case SETTINGS_ID.support:
         try {
           await WebBrowser.openBrowserAsync(CUSTOMER_CENTER_URL);
         } catch (e) {
@@ -35,19 +31,19 @@ export default function SettingsListItem({ item }: SettingsListItemProps) {
           alert(`링크 열기 실패: ${e}`);
         }
         break;
-      case SETTINGS_OTHER[2].id:
+      case SETTINGS_ID.notice:
         console.log("공지사항 페이지로 이동");
         break;
-      case SETTINGS_OTHER[3].id:
+      case SETTINGS_ID.policy:
         console.log("개인정보처리방침 & 이용약관 페이지로 이동");
         break;
-      case SETTINGS_OTHER[4].id:
+      case SETTINGS_ID.guide:
         router.push({
           pathname: "/sign-up/onboarding",
           params: { from: "my-page" },
         });
         break;
-      case SETTINGS_OTHER[5].id:
+      case SETTINGS_ID.version:
         console.log("버전 관련 액션");
         break;
     }

@@ -32,7 +32,10 @@ export default function OnboardingScreen() {
 
   const handlePressNext = () => {
     if (isLastItem) {
-      if (isFromNickname) router.push("/my-page");
+      if (isFromNickname) {
+        router.push("/my-page");
+        return;
+      }
       router.push("/sign-up/welcome");
     } else {
       ref.current?.scrollTo({

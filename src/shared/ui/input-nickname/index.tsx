@@ -16,7 +16,6 @@ interface InputNicknameProps {
   setValue: (value: string) => void;
 }
 
-// TODO: 위치 shared로 옮기기
 export default function InputNickname({
   value,
   isError,
