@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
 import { Pressable, StyleSheet, View } from "react-native";
 
@@ -41,7 +42,10 @@ export default function SettingsListItem({ item }: SettingsListItemProps) {
         console.log("개인정보처리방침 & 이용약관 페이지로 이동");
         break;
       case SETTINGS_OTHER[4].id:
-        console.log("가이드 페이지로 이동");
+        router.push({
+          pathname: "/sign-up/onboarding",
+          params: { from: "my-page" },
+        });
         break;
       case SETTINGS_OTHER[5].id:
         console.log("버전? 페이지로 이동");
