@@ -1,6 +1,7 @@
 import { FlatList, StyleSheet } from "react-native";
 
 import { AlarmResponse, AlarmType } from "../../types";
+import AlarmEmptyView from "../alarm-empty-view";
 import AlarmItem from "../alarm-item";
 
 interface AlarmListProps {
@@ -14,13 +15,15 @@ export default function AlarmList({ filter, alarmData }: AlarmListProps) {
       ? alarmData
       : alarmData.filter((item) => item.notificationType === filter);
 
-  return (
+  return filteredAlarmList.length > 0 ? (
     <FlatList
       contentContainerStyle={styles.content}
       data={filteredAlarmList}
       keyExtractor={(item) => String(item.notificationId)}
       renderItem={({ item }) => <AlarmItem alarm={item} />}
     />
+  ) : (
+    <AlarmEmptyView />
   );
 }
 
