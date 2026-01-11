@@ -1,21 +1,21 @@
 import { StyleSheet, View } from "react-native";
 
-import { AppText, RemovableChip } from "@shared/ui";
 import { colors } from "@theme/token";
+
+import AppText from "../app-text";
+import RemovableChip from "../removable-chip";
 
 interface RecentSearchProps {
   recentSearchedKeywords: string[];
+  handleClickKeyword: (keyword: string) => void;
+  handleRemoveKeyword: (keyword: string) => void;
 }
 
 export default function RecentSearch({
   recentSearchedKeywords,
+  handleClickKeyword,
+  handleRemoveKeyword,
 }: RecentSearchProps) {
-  const handleClickKeyword = (keyword: string) => {
-    console.log(keyword, " 검색");
-  };
-  const handleRemoveKeyword = (keyword: string) => {
-    console.log(keyword, " 삭제");
-  };
   return (
     <View style={styles.container}>
       <AppText weight="semibold" size="lg" color={colors.grey[100]}>

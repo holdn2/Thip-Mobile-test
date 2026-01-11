@@ -1,9 +1,9 @@
 import { useCallback, useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 
-import { SearchBar } from "@shared/ui";
+import { RecentSearch, SearchBar } from "@shared/ui";
 
-import { MostSearched, RecentSearch, SearchResult } from "./components";
+import { MostSearched, SearchResult } from "./components";
 import { DUMMY_MOST_DATA, DUMMY_RECENT_DATA } from "./constants";
 
 export default function SearchScreen() {
@@ -18,6 +18,12 @@ export default function SearchScreen() {
     console.log(searchText, " 검색");
     setHasSearched(true);
   }, [searchText]);
+  const handleClickKeyword = (keyword: string) => {
+    console.log(keyword, " 검색");
+  };
+  const handleRemoveKeyword = (keyword: string) => {
+    console.log(keyword, " 삭제");
+  };
 
   return (
     <View style={styles.page}>
@@ -33,7 +39,11 @@ export default function SearchScreen() {
         <SearchResult searchText={searchText} hasSearched={hasSearched} />
       ) : (
         <ScrollView contentContainerStyle={styles.content}>
-          <RecentSearch recentSearchedKeywords={DUMMY_RECENT_DATA} />
+          <RecentSearch
+            recentSearchedKeywords={DUMMY_RECENT_DATA}
+            handleClickKeyword={handleClickKeyword}
+            handleRemoveKeyword={handleRemoveKeyword}
+          />
           <MostSearched mostSearchedBooks={DUMMY_MOST_DATA} />
         </ScrollView>
       )}
