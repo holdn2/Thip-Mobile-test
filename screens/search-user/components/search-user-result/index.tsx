@@ -1,9 +1,11 @@
+import { useCallback } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 
 import { AppText } from "@shared/ui";
 import { colors } from "@theme/token";
 
 import { DUMMY_SEARCHED_USER } from "../../constants";
+import { SearchUserResponse } from "../../types";
 import SearchedUserItem from "../searched-user-item";
 
 interface SearchUserResultProps {
@@ -16,6 +18,15 @@ export default function SearchUserResult({
   hasSearched,
 }: SearchUserResultProps) {
   // TODO: searchText로 추후 서버 api 연동하여 검색된 유저 리스트 조회
+
+  const listItem = useCallback(
+    ({ item }: { item: SearchUserResponse }) => (
+      <SearchedUserItem userData={item} />
+    ),
+    []
+  );
+
+  const Separator = () => <View style={styles.separator} />;
 
   return (
     <View style={styles.container}>
@@ -37,8 +48,8 @@ export default function SearchUserResult({
           contentContainerStyle={styles.resultWrapper}
           data={DUMMY_SEARCHED_USER}
           keyExtractor={(item) => String(item.userId)}
-          renderItem={({ item }) => <SearchedUserItem userData={item} />}
-          ItemSeparatorComponent={() => <View style={styles.separator} />}
+          renderItem={listItem}
+          ItemSeparatorComponent={Separator}
         />
       )}
     </View>

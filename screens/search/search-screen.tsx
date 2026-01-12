@@ -18,12 +18,13 @@ export default function SearchScreen() {
     console.log(searchText, " 검색");
     setHasSearched(true);
   }, [searchText]);
-  const handleClickKeyword = (keyword: string) => {
+
+  const handleClickKeyword = useCallback((keyword: string) => {
     console.log(keyword, " 검색");
-  };
-  const handleRemoveKeyword = (keyword: string) => {
+  }, []);
+  const handleRemoveKeyword = useCallback((keyword: string) => {
     console.log(keyword, " 삭제");
-  };
+  }, []);
 
   return (
     <View style={styles.page}>
