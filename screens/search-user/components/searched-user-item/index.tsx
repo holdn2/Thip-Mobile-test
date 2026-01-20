@@ -57,6 +57,8 @@ const styles = StyleSheet.create({
     width: 36,
     height: 36,
     borderRadius: 999,
+    borderWidth: 0.5,
+    borderColor: colors.grey[300],
   },
   profileText: {
     gap: 4,
