@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
   container: {
     width: "80%",
     padding: 12,
-    boxSizing: "border-box",
     backgroundColor: colors.darkgrey.dark,
     borderRadius: 12,
     borderWidth: 1,
